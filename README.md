@@ -6,12 +6,12 @@
 
 Audit synthetic data plans for leakage, label balance, and privacy claims. It solves review drift by turning plain-text plans into deterministic CI-friendly findings.
 
-## Input Contract 18
+## Input Contract
 
 Accepts synthetic data plan. The reader supports plain text, JSON, JSONL, and CSV so the
 tool can fit into scripts, CI jobs, and review exports.
 
-## CLI Walkthrough 18
+## CLI Walkthrough
 
 ```bash
 python -m pip install -e ".[dev]"
@@ -20,7 +20,7 @@ synthetic-data-check examples/sample.txt --json --fail-on medium
 python -m synthetic_data_check --help
 ```
 
-## Rule Surface 18
+## Rule Surface
 
 | Rule | Severity | Meaning |
 |---|---:|---|
@@ -28,7 +28,7 @@ python -m synthetic_data_check --help
 | `unknown-balance` | medium | class balance unclear |
 | `privacy-unchecked` | low | privacy checks missing |
 
-## Validation Notes 18
+## Validation Notes
 
 ```bash
 ruff check .
