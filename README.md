@@ -1,36 +1,30 @@
 # Synthetic Data Check
 
-Audit synthetic data plans for leakage, label balance, and privacy claims.
-
-## First impression
+| Field | Value |
+| --- | --- |
+| Area | data quality |
+| Command | `synthetic-data-check` |
+| Example | `examples/sample.txt` |
 
 ![Synthetic Data Check cover](assets/readme-cover.svg)
 
-When this tool reports something, I want the finding to be boringly explicit: what matched, how severe it is, and what a reviewer should clean up.
+Audit synthetic data plans for leakage, label balance, and privacy claims. It keeps the review small: one input file, a short list of findings, and enough context to fix the line that caused the warning.
 
-## Tripwires
+## What gets flagged
 
-- `leakage-possible` (high): synthetic data leakage risk. Fix: run nearest-neighbor and privacy checks.
-- `unknown-balance` (medium): class balance unclear. Fix: report label distribution.
-- `privacy-unchecked` (low): privacy checks missing. Fix: document privacy validation.
+- `leakage-possible` - synthetic data leakage risk (high); run nearest-neighbor and privacy checks.
+- `unknown-balance` - class balance unclear (medium); report label distribution.
+- `privacy-unchecked` - privacy checks missing (low); document privacy validation.
 
-## Runbook
+## Policy flow
+
+![Policy flow](assets/readme-diagram.svg)
+
+## Run the sample
 
 ```bash
 git clone https://github.com/mertefekurt/synthetic-data-check.git
 cd synthetic-data-check
-python -m venv .venv
-source .venv/bin/activate
 python -m pip install -e ".[dev]"
-```
-
-Then:
-
-```bash
 synthetic-data-check examples/sample.txt
-synthetic-data-check examples/sample.txt --json
 ```
-
-## Development note
-
-The policy lives in `rules.py`; parsing and rendering stay separate so the rule list is easy to audit.

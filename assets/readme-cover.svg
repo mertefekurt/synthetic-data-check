@@ -1,10 +1,31 @@
 <svg width="1280" height="420" viewBox="0 0 1280 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Synthetic Data Check cover">
-  <rect width="1280" height="420" rx="28" fill="#111827"/>
 
-  <path d="M92 92h1096v236H92z" fill="none" stroke="#64748b" stroke-width="10"/>
-  <path d="M92 142h1096" stroke="#64748b" stroke-width="10"/>
-  <circle cx="130" cy="117" r="9" fill="#38bdf8"/><circle cx="164" cy="117" r="9" fill="#e0f2fe"/><circle cx="198" cy="117" r="9" fill="#f8fafc"/>
-  <text x="132" y="225" fill="#f8fafc" font-family="Sora, ui-sans-serif, system-ui" font-size="53" font-weight="800">Synthetic Data Check</text>
-  <text x="136" y="280" fill="#e0f2fe" font-family="Sora, ui-sans-serif, system-ui" font-size="23">Focused CLI for synthetic data</text>
-  <text x="890" y="120" fill="#38bdf8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">DATA AND PRIVACY</text>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#a3e635" stop-opacity=".34"/>
+      <stop offset=".54" stop-color="#161616" stop-opacity="0"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity=".30"/>
+    </linearGradient>
+    <filter id="grain" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="78" result="noise"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 .10"/></feComponentTransfer>
+      <feBlend mode="soft-light" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="420" rx="30" fill="#161616"/>
+  <rect width="1280" height="420" rx="30" fill="url(#g)" filter="url(#grain)"/>
+
+  <rect x="82" y="74" width="300" height="272" rx="30" fill="#a3e635" opacity=".18"/>
+  <path d="M132 142h168M132 202h108M132 262h202" stroke="#fafafa" stroke-width="15" stroke-linecap="round"/>
+  <text x="446" y="184" fill="#fafafa" font-family="Aptos, Segoe UI, ui-sans-serif, system-ui" font-size="60" font-weight="850">Synthetic Data Check</text>
+  <text x="450" y="242" fill="#d4d4d4" font-family="Aptos, Segoe UI, ui-sans-serif, system-ui" font-size="23">Audit synthetic data plans for leakage, label...</text>
+  <rect x="450" y="278" width="360" height="44" rx="22" fill="#38bdf8" opacity=".18"/>
+  <text x="470" y="307" fill="#fafafa" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="800">DATA QUALITY</text>
+  <rect x="846" y="122" width="160" height="28" rx="8" fill="#a3e635" opacity=".85"/>
+  <text x="862" y="141" fill="#fafafa" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">leakage-possible</text>
+  <rect x="846" y="176" width="220" height="28" rx="8" fill="#38bdf8" opacity=".85"/>
+  <text x="862" y="195" fill="#fafafa" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">unknown-balance</text>
+  <rect x="846" y="230" width="270" height="28" rx="8" fill="#a3e635" opacity=".85"/>
+  <text x="862" y="249" fill="#fafafa" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">privacy-unchecked</text>
 </svg>
